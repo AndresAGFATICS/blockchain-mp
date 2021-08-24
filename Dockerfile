@@ -1,3 +1,3 @@
 WORKDIR /app
-COPY docker-compose.yml
+COPY docker-compose.yml .
 RUN docker-compose up
