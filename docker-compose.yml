@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+    certo-signer:
+        image: trugrouptech/certo-signer:v2.1
+        container_name: certo-signer
+        ports:
+            - 3001:3001 # API Rest Services - expose if needed/wanted
+        environment:
+            - IPFS_PORT=5001
+            - IPFS_HOST=127.0.0.1 # IMPORTANT - Change this IP
+            - IPFS_PROTOCOL=http
+    ipfs:
+        image: trugrouptech/ipfs
+        container_name: ipfs
+        ports:
+            - '4001:4001' # IPFS swarm - expose if needed/wanted
+            - '5001:5001' # IPFS api - expose if needed/wanted
+            - '8080:8080' # IPFS gateway - expose if needed/wanted
